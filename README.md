@@ -1,125 +1,115 @@
-# 🔄 UCP - Universal Converter Pro
+# 🔄 Universal Converter Professional (UCP)
 
-A powerful and modular **command-line unit converter** written in Python.
+<img width="2803" height="1130" alt="Screenshot 2026-08-06 215446" src="https://github.com/user-attachments/assets/1d6cf476-fbd2-42d2-9372-5e34aebd9546" />
 
-UCP (Universal Converter Pro) helps users convert values between different measurement systems with support for multiple categories including time, data, length, area, volume, temperature, energy, and more.
 
----
+**Universal Converter Professional (UCP)** is a powerful and modular command-line unit converter built with Python.
 
-## 📸 Screenshot
-<img width="2803" height="1130" alt="Screenshot 2026-08-06 215446" src="https://github.com/user-attachments/assets/405b4222-4264-4624-a27a-3298a232bb0a" />
-
+UCP provides a complete conversion system for different measurement categories, supporting Metric, Imperial, US, and UK units with a clean and expandable architecture.
 
 ---
 
 ## ✨ Features
 
-* ✅ 20 different converter categories
-* ✅ Hundreds of supported units
-* ✅ Metric, Imperial, US, and UK measurement systems
-* ✅ Binary (1024-based) and Decimal (1000-based) data conversion
-* ✅ Cross-system conversions
-* ✅ Interactive CLI interface
-* ✅ Modular project architecture
-* ✅ Fast and lightweight (Python standard library only)
+* 🚀 Interactive command-line interface
+* 🔢 20+ conversion categories
+* 📚 Hundreds of supported units
+* ⚡ Fast and accurate calculations
+* 🌍 Metric, Imperial, US, and UK systems
+* 💾 Binary (1024-based) and Decimal (1000-based) data conversion
+* 🔄 Cross-system unit conversion
+* 🧩 Modular project architecture
+* 🐍 Pure Python (No external dependencies)
 
 ---
 
-## 📂 Project Structure
+# 📌 Supported Converters
+
+| #  | Category                  |
+| -- | ------------------------- |
+| 1  | ⏱ Time                    |
+| 2  | 💾 Data Storage (Binary)  |
+| 3  | 💾 Data Storage (Decimal) |
+| 4  | 📏 Length (Metric)        |
+| 5  | 📏 Length (Imperial)      |
+| 6  | 📐 Area (Metric)          |
+| 7  | 📐 Area (Imperial)        |
+| 8  | 🧪 Volume (Metric)        |
+| 9  | 🥤 Volume (US)            |
+| 10 | 🥛 Volume (UK)            |
+| 11 | ⚖️ Weight (Metric)        |
+| 12 | ⚖️ Weight (Imperial)      |
+| 13 | 🌡 Temperature            |
+| 14 | 🚗 Speed                  |
+| 15 | pressure                  |
+| 16 | ⚡ Energy                  |
+| 17 | 🔋 Power                  |
+| 18 | 📡 Frequency              |
+| 19 | 📐 Angle                  |
+| 20 | 🧪 Density                |
+
+---
+
+# 📂 Project Structure
 
 ```text
-UCP/
+Universal-Converter-Professional---UCP/
+
 │
 ├── INOUT.py
-│   └── User interface, menus, input/output handling
+│   └── User interface, menus, and input/output handling
 │
 ├── Logic.py
-│   └── Conversion algorithms and calculation engine
+│   └── Conversion functions and calculation engine
 │
-└── data.py
-    └── Conversion constants, unit mappings, and metadata
+├── data.py
+│   └── Units, constants, labels, and metadata
+│
+└── README.md
 ```
 
 ---
 
-# 🧩 Architecture
+# 🧠 Architecture
 
 ## 🖥 INOUT.py
 
-Responsible for the user interaction layer.
-
-Features:
+Responsible for the user experience:
 
 * Main menu system
-* Converter category selection
-* Sub-menu navigation
+* Converter selection
 * User input handling
-* Displaying conversion results
+* Result formatting
+* Display management
 
 ---
 
-## 🧠 Logic.py
+## ⚙️ Logic.py
 
-The core conversion engine of UCP.
+The core conversion engine.
 
-Responsible for:
+Handles:
 
-* Performing calculations
-* Managing conversion functions
-* Handling different unit systems
-* Returning converted values
+* Conversion calculations
+* Unit mapping
+* Conversion selection
+* Result generation
 
-Includes conversion logic for:
-
-* Time
-* Data Storage
-* Length
-* Area
-* Volume
-* Weight
-* Temperature
-* Speed
-* Pressure
-* Energy
-* Power
-* Frequency
-* Angle
-* Density
+All converter functions are separated by category for better maintainability.
 
 ---
 
 ## 📚 data.py
 
-Contains all conversion data and metadata.
+Contains all conversion data:
 
-Includes:
-
-* Unit conversion constants
+* Unit definitions
+* Conversion factors
 * Unit labels
-* Conversion mappings
-* Reference values
-* Menu configuration
+* Menu mappings
+* Metadata
 
----
-
-# 🔢 Supported Converters
-
-| Category                   | Supported |
-| -------------------------- | --------- |
-| ⏱ Time                     | ✅         |
-| 💾 Data (Binary / Decimal) | ✅         |
-| 📏 Length                  | ✅         |
-| 📐 Area                    | ✅         |
-| 🧪 Volume                  | ✅         |
-| ⚖️ Weight                  | ✅         |
-| 🌡 Temperature             | ✅         |
-| 🚗 Speed                   | ✅         |
-| pressure                   | ✅         |
-| ⚡ Energy                   | ✅         |
-| 🔋 Power                   | ✅         |
-| 📡 Frequency               | ✅         |
-| 📐 Angle                   | ✅         |
-| 🧪 Density                 | ✅         |
+This separation makes adding new units simple and organized.
 
 ---
 
@@ -128,59 +118,44 @@ Includes:
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/UCP.git
+git clone https://github.com/MParham8/Universal-Converter-Professional---UCP.git
 ```
 
-Navigate to the project folder:
+Navigate into the project directory:
 
 ```bash
-cd UCP
+cd Universal-Converter-Professional---UCP
 ```
 
 ---
 
-# ▶️ Usage
+# ▶️ Run
 
-Run the program:
+Start the application:
 
 ```bash
 python INOUT.py
 ```
-
-Then select:
-
-1. Converter category
-2. Conversion type
-3. Enter the value to convert
-
-The program will display the converted result.
 
 ---
 
 # 💻 Example
 
 ```text
-$ - Hello! Welcome to UCP (Universal Converter Pro)
+Welcome to UCP (Universal Converter Professional)
 
-$ - Which converter do you want?
+Select a converter:
 
-1 Time
-2 Data (Binary - 1024)
-3 Data (Decimal - 1000)
+1. Time
+2. Data Binary
+3. Data Decimal
+4. Length Metric
 ...
 
-$ - Enter your choice:
-1
-
-$ - Choose conversion:
-1
-
-$ - Enter value to convert:
-120
-
-$ - Result:
-120 → 2 minutes
+Enter your choice:
 ```
+
+Select your category, choose the conversion type, enter your value, and receive the converted result instantly.
 
 ---
 
@@ -189,29 +164,52 @@ $ - Result:
 * Python 3
 * Standard Python Library
 
-No external dependencies required.
-
 ---
 
 # 🎯 Project Goals
 
-The goal of UCP is to provide a simple, accurate, and extensible unit conversion tool while maintaining a clean modular structure.
+The main goal of UCP is to create a reliable, expandable, and user-friendly conversion tool with:
+
+* Clean code organization
+* Accurate conversion formulas
+* Easy future development
+* Support for many measurement systems
 
 ---
 
-# 📌 Future Improvements
+# 🔮 Future Improvements
 
-Possible future updates:
+Planned improvements:
 
-* GUI version
-* Web API support
-* More conversion categories
-* Unit search system
-* History of conversions
-* Improved user interface
+* 🖥 Graphical User Interface (GUI)
+* 🌐 Web API version
+* 📱 Mobile application
+* 📜 Conversion history
+* 🔍 Unit search system
+* 🧪 Automated testing
+* ➕ Additional scientific conversions
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you have ideas, improvements, or bug fixes:
+
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
 
 ---
 
 # 📄 License
 
 This project is licensed under the MIT License.
+
+---
+
+# ⭐ Support
+
+If you find this project useful, consider giving it a ⭐ on GitHub!
