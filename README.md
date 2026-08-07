@@ -1,11 +1,11 @@
-# 🔄 Universal Converter Professional (UCP)
+# 🔄 Universal Converter MP8.2(UCMP8.2)
 
 <img width="2803" height="1130" alt="Screenshot 2026-08-06 215446" src="https://github.com/user-attachments/assets/1d6cf476-fbd2-42d2-9372-5e34aebd9546" />
 
 
-**Universal Converter Professional (UCP)** is a powerful and modular command-line unit converter built with Python.
+**Universal Converter MP8.2 (UCMP8.2)** is a powerful and modular command-line unit converter built with Python.
 
-UCP provides a complete conversion system for different measurement categories, supporting Metric, Imperial, US, and UK units with a clean and expandable architecture.
+UCMP8.2 provides a complete conversion system for different measurement categories, supporting Metric, Imperial, US, and UK units with a clean and expandable architecture.
 
 ---
 
@@ -53,7 +53,7 @@ UCP provides a complete conversion system for different measurement categories, 
 # 📂 Project Structure
 
 ```text
-Universal-Converter-Professional---UCP/
+UCMP8.2/
 
 │
 ├── INOUT.py
@@ -113,22 +113,6 @@ This separation makes adding new units simple and organized.
 
 ---
 
-# 🚀 Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/MParham8/Universal-Converter-Professional---UCP.git
-```
-
-Navigate into the project directory:
-
-```bash
-cd Universal-Converter-Professional---UCP
-```
-
----
-
 # ▶️ Run
 
 Start the application:
@@ -142,7 +126,7 @@ python INOUT.py
 # 💻 Example
 
 ```text
-Welcome to UCP (Universal Converter Professional)
+Welcome to UCMP8.2 
 
 Select a converter:
 
@@ -162,7 +146,6 @@ Select your category, choose the conversion type, enter your value, and receive 
 # 🛠 Technologies
 
 * Python 3
-* Standard Python Library
 
 ---
 
@@ -174,20 +157,6 @@ The main goal of UCP is to create a reliable, expandable, and user-friendly conv
 * Accurate conversion formulas
 * Easy future development
 * Support for many measurement systems
-
----
-
-# 🔮 Future Improvements
-
-Planned improvements:
-
-* 🖥 Graphical User Interface (GUI)
-* 🌐 Web API version
-* 📱 Mobile application
-* 📜 Conversion history
-* 🔍 Unit search system
-* 🧪 Automated testing
-* ➕ Additional scientific conversions
 
 ---
 
@@ -206,7 +175,7 @@ If you have ideas, improvements, or bug fixes:
 
 # 📄 License
 
-This project is licensed under the MIT License.
+This project is Open Source!
 
 ---
 
