@@ -1,6 +1,6 @@
 # INOUT.py - Complete User Interface for all 20 converter types
 print("\n" + "=" * 60)
-print("$ - Hello! Welcome to UCP (Universal Converter Pro)")
+print("$ - Hello! Welcome to UCMP8")
 print("=" * 60)
 
 from data import MENU_OPTIONS
