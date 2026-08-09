@@ -1,121 +1,133 @@
-# 🔄 Universal Converter MP8.2(UCMP8.2)
+# 🔄 Universal Converter MP8V
 
-<img width="2803" height="1130" alt="Screenshot 2026-08-06 215446" src="https://github.com/user-attachments/assets/1d6cf476-fbd2-42d2-9372-5e34aebd9546" />
+**Universal Converter MP8V (UCMP8V)** is a pure-Python, modular command-line unit converter designed to be accurate, fast, and easy to extend.
 
-
-**Universal Converter MP8.2 (UCMP8.2)** is a powerful and modular command-line unit converter built with Python.
-
-UCMP8.2 provides a complete conversion system for different measurement categories, supporting Metric, Imperial, US, and UK units with a clean and expandable architecture.
+The project supports **20 conversion categories** across Metric, Imperial, US, and UK measurement systems. The current architecture separates user interaction, conversion logic, and conversion data so that the application is easier to maintain and expand.
 
 ---
 
 ## ✨ Features
 
-* 🚀 Interactive command-line interface
-* 🔢 20+ conversion categories
-* 📚 Hundreds of supported units
-* ⚡ Fast and accurate calculations
-* 🌍 Metric, Imperial, US, and UK systems
-* 💾 Binary (1024-based) and Decimal (1000-based) data conversion
-* 🔄 Cross-system unit conversion
-* 🧩 Modular project architecture
-* 🐍 Pure Python (No external dependencies)
+- 🚀 Interactive command-line interface
+- 🔢 20 conversion categories
+- 📚 Hundreds of supported units and conversion options
+- ⚡ Fast, data-driven conversion engine
+- 🌍 Metric, Imperial, US, and UK systems
+- 💾 Binary (1024-based) and Decimal (1000-based) data conversion
+- 🔄 Cross-system conversions
+- 🧩 Modular architecture with shared metadata
+- 🛡️ Improved numeric/input validation
+- 🐍 Pure Python — no external dependencies
 
 ---
 
-# 📌 Supported Converters
+## 📌 Supported Converters
 
-| #  | Category                  |
-| -- | ------------------------- |
-| 1  | ⏱ Time                    |
-| 2  | 💾 Data Storage (Binary)  |
-| 3  | 💾 Data Storage (Decimal) |
-| 4  | 📏 Length (Metric)        |
-| 5  | 📏 Length (Imperial)      |
-| 6  | 📐 Area (Metric)          |
-| 7  | 📐 Area (Imperial)        |
-| 8  | 🧪 Volume (Metric)        |
-| 9  | 🥤 Volume (US)            |
-| 10 | 🥛 Volume (UK)            |
-| 11 | ⚖️ Weight (Metric)        |
-| 12 | ⚖️ Weight (Imperial)      |
-| 13 | 🌡 Temperature            |
-| 14 | 🚗 Speed                  |
-| 15 | pressure                  |
-| 16 | ⚡ Energy                  |
-| 17 | 🔋 Power                  |
-| 18 | 📡 Frequency              |
-| 19 | 📐 Angle                  |
-| 20 | 🧪 Density                |
+| # | Category |
+|---:|---|
+| 1 | ⏱️ Time |
+| 2 | 💾 Data Storage (Binary) |
+| 3 | 💾 Data Storage (Decimal) |
+| 4 | 📏 Length (Metric) |
+| 5 | 📏 Length (Imperial) |
+| 6 | 📐 Area (Metric) |
+| 7 | 📐 Area (Imperial) |
+| 8 | 🧪 Volume (Metric) |
+| 9 | 🥤 Volume (US) |
+| 10 | 🥛 Volume (UK) |
+| 11 | ⚖️ Weight (Metric) |
+| 12 | ⚖️ Weight (Imperial) |
+| 13 | 🌡️ Temperature |
+| 14 | 🚗 Speed |
+| 15 | 🧯 Pressure |
+| 16 | ⚡ Energy |
+| 17 | 🔋 Power |
+| 18 | 📡 Frequency |
+| 19 | 📐 Angle |
+| 20 | 🧪 Density |
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
-UCMP8.2/
-
+Universal-Converter-MP8V/
 │
 ├── INOUT.py
-│   └── User interface, menus, and input/output handling
+│   └── CLI, menus, input validation, and output formatting
 │
 ├── Logic.py
-│   └── Conversion functions and calculation engine
+│   └── Data-driven conversion engine
 │
 ├── data.py
-│   └── Units, constants, labels, and metadata
+│   └── Unit definitions, constants, labels, and converter metadata
 │
 └── README.md
 ```
 
 ---
 
-# 🧠 Architecture
+## 🧠 Architecture
 
-## 🖥 INOUT.py
+### 🖥️ `INOUT.py`
 
-Responsible for the user experience:
+Handles the command-line user experience:
 
-* Main menu system
-* Converter selection
-* User input handling
-* Result formatting
-* Display management
+- Main menu and converter selection
+- Conversion option selection
+- Numeric input validation
+- Error handling for invalid selections
+- Result formatting and display
 
----
+Menus are generated from shared metadata instead of duplicating large menu definitions.
 
-## ⚙️ Logic.py
+### ⚙️ `Logic.py`
 
-The core conversion engine.
+Contains the central conversion engine.
 
-Handles:
+The converter uses shared unit tables and conversion metadata instead of maintaining a large collection of nearly identical conversion functions. This reduces duplicated code and makes new conversion options easier to add.
 
-* Conversion calculations
-* Unit mapping
-* Conversion selection
-* Result generation
+For linear units, conversions are calculated from their common base-unit factors. Temperature remains a dedicated special case because Celsius, Fahrenheit, Kelvin, and Rankine require affine transformations rather than simple multiplication.
 
-All converter functions are separated by category for better maintainability.
+### 📚 `data.py`
 
----
+Contains the application's conversion data and metadata:
 
-## 📚 data.py
+- Unit/base-unit factors
+- Display labels
+- Cross-system constants
+- Converter categories
+- Conversion option metadata
+- CLI menu metadata
 
-Contains all conversion data:
-
-* Unit definitions
-* Conversion factors
-* Unit labels
-* Menu mappings
-* Metadata
-
-This separation makes adding new units simple and organized.
+Keeping data separate from the calculation engine makes the project easier to audit and extend.
 
 ---
 
-# ▶️ Run
+## 🐛 Bug Fixes & Accuracy Improvements
 
-Start the application:
+The current refactor also fixes several issues found during review, including:
+
+- Corrected several Imperial and US/UK volume factors
+- Improved nautical-mile precision
+- Corrected common cross-system area and volume constants
+- Normalized unit naming between data and conversion metadata
+- Removed duplicated conversion logic that could drift between categories
+- Improved handling of invalid menu choices and numeric input
+- Preserved the existing 20-category CLI workflow
+
+The conversion engine was also smoke-tested across representative time, data, length, area, volume, weight, temperature, speed, frequency, angle, and density conversions.
+
+---
+
+## ▶️ Run
+
+Requirements:
+
+- Python 3.x
+- No third-party packages required
+
+Run the application with:
 
 ```bash
 python INOUT.py
@@ -123,62 +135,66 @@ python INOUT.py
 
 ---
 
-# 💻 Example
+## 💻 Example
 
 ```text
-Welcome to UCMP8.2 
+Welcome to Universal Converter MP8V
 
 Select a converter:
 
 1. Time
-2. Data Binary
-3. Data Decimal
-4. Length Metric
+2. Data Storage (Binary)
+3. Data Storage (Decimal)
+4. Length (Metric)
 ...
+20. Density
 
 Enter your choice:
 ```
 
-Select your category, choose the conversion type, enter your value, and receive the converted result instantly.
+Choose a category, select a conversion, enter a numeric value, and the application will display the converted result.
 
 ---
 
-# 🛠 Technologies
+## 🛠️ Technologies
 
-* Python 3
-
----
-
-# 🎯 Project Goals
-
-The main goal of UCP is to create a reliable, expandable, and user-friendly conversion tool with:
-
-* Clean code organization
-* Accurate conversion formulas
-* Easy future development
-* Support for many measurement systems
+- Python 3
+- Standard library only
 
 ---
 
-# 🤝 Contributing
+## 🎯 Project Goals
+
+Universal Converter MP8V aims to provide:
+
+- ✅ Accurate and consistent conversion formulas
+- 🧹 Clean and maintainable code
+- 🧩 A data-driven architecture
+- ➕ Easy addition of new units and categories
+- 🛡️ Robust input handling
+- 🚀 Fast command-line operation
+
+---
+
+## 🤝 Contributing
 
 Contributions are welcome!
 
-If you have ideas, improvements, or bug fixes:
-
 1. Fork the repository
-2. Create a new branch
-3. Make your changes
+2. Create a feature or fix branch
+3. Make and test your changes
 4. Submit a pull request
 
----
-
-# 📄 License
-
-This project is Open Source!
+For conversion changes, please verify both the numerical result and the displayed unit label.
 
 ---
 
-# ⭐ Support
+## 📄 License
 
-If you find this project useful, consider giving it a ⭐ on GitHub!
+This project is open source.
+
+---
+
+## ⭐ Support
+
+If you find Universal Converter MP8V useful, consider giving the project a ⭐ on GitHub!
